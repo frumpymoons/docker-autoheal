@@ -57,7 +57,7 @@ if [ "$1" = 'autoheal' ]; then
   fi
 
   AUTOHEAL_START_PERIOD=${AUTOHEAL_START_PERIOD:=0}
-  echo "Monitoring containers for unhealthy status in ${AUTOHEAL_START_PERIOD} second(s)"
+  echo "Monitoring containers for unhealthy status $([ "${AUTOHEAL_START_PERIOD}" != 0 ] && echo "in ${AUTOHEAL_START_PERIOD} second(s)")"
   sleep ${AUTOHEAL_START_PERIOD}
 
   while true; do
